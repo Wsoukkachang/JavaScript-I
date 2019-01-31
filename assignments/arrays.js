@@ -80,7 +80,7 @@ let carModels = [''];
 
 function alphabeticalOrder() {
 
-    for (let i = 1; i < inventory.length; i++) {
+    for (let i = 0; i < inventory.length; i++) {
         carModels.push(inventory[i].car_model);      
     }
 
@@ -100,7 +100,7 @@ let carYears = [''];
 
 function years() {
 
-    for (let i = 1; i < inventory.length; i++) {
+    for (let i = 0; i < inventory.length; i++) {
         carYears.push(inventory[i].car_year);
     }
 }
@@ -123,20 +123,25 @@ console.log(getOldCars(result));
 
 // ==== Challenge 6 ====
 // A buyer is interested in seeing only BMW and Audi cars within the inventory.  Return an array that only contains BMW and Audi cars.  Once you have populated the BMWAndAudi array, use JSON.stringify() to show the results of the array in the console.
-let BMWAndAudi =[];
 
 
 function bmwAudi() {
 
-    for (let i = 1; i < inventory.length; i++) {
+    let BMWAndAudi = [];
+
+    for (let i = 0; i < inventory.length; i++) {
         if (inventory[i].car_make === "BMW" || inventory[i].car_make === "Audi") {
             BMWAndAudi.push(inventory[i].car_model);
+            i++;
         }
-        else return
+        else {
+            i++;
+        }
     }
-    
+    console.log(BMWAndAudi)
 }
-console.log(bmwAudi(BMWAndAudi));
+
+console.log(JSON.stringify(bmwAudi()));
 
 
 
