@@ -107,7 +107,7 @@ const parent = {
     
     grandchild: {
       "name": "Sam",
-      "age": "30", 
+      "age": "30",
     }
   }
 }
